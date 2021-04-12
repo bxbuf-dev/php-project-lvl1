@@ -1,0 +1,12 @@
+{
+    "name": "hexlet/code",
+    "description": "My first project at Hexlet. Terminal game 'Brain Games'",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Aleksei Semenchenko",
+            "email": "bxbuf-dev@outlook.com"
+        }
+    ],
+    "require": {}
+}
