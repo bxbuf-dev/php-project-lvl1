@@ -8,5 +8,9 @@
             "email": "bxbuf-dev@outlook.com"
         }
     ],
+    "license": "MIT",
+    "bin": [
+        "bin/brain-games"
+    ],
     "require": {}
 }
