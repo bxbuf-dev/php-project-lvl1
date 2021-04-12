@@ -1,4 +1,10 @@
 #!/usr/bin/env php
 <?php
 
-echo "Welcome to the Brain Games!";
+namespace Brain\Games;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use function Brain\Games\Cli\getUserName;
+
+$pName = getUserName();
