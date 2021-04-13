@@ -25,4 +25,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Linter ckecks
-        run: make lint
+        run:
+          make install
+          make lint
+          
