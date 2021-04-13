@@ -24,7 +24,10 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Linter ckecks
+      - name: Install Dependences
+        run: make install -- squizlabs/php_codesniffer
+
+      - name: Install Dpendences
         run: make install
+      - name: Linter ckecks
         run: make lint
-          
