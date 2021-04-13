@@ -25,8 +25,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install Dependences
-        run: make install
-        
+        run: make install -- quizlabs/php_codesniffer
+
       - name: Linter ckecks
         run: make lint
           
