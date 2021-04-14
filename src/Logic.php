@@ -7,12 +7,13 @@ use function cli\prompt;
 
 function getAnswers()
 {
+    line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($i = 0; $i < 3; $i++) {
         $num = rand();
         $correctAnswer = ($num % 2) ? "no" : "yes";
         $plrAnswer = prompt("Question: {$num}");
         if ($plrAnswer !== $correctAnswer) {
-            line("'{$plrAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line('"%s" is wrong answer ;(. Correct answer was "%s".', $plrAnswer, $correctAnswer);
             return false;
         }
         line("Correct!");
