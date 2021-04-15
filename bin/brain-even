@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-namespace Brain\Even;
+namespace Brain\Games;
 
 $autoloadPath1 = __DIR__ . "/../vendor/autoload.php";
 $autoloadPath2 = __DIR__ . "/../../../autoload.php";
@@ -12,9 +12,24 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function Brain\Games\Cli\getUserName;
-use function Brain\Even\Logic\getAnswers;
-use function Brain\Even\Logic\giveResult;
+use function Brain\Games\Engine\runGame;
+use function Brain\Games\Cli\replyToPlayer;
 
-$pName = getUserName();
-$plrPass = getAnswers();
-giveResult($pName, $plrPass);
+$playerName = getUserName();
+
+$min = 0;
+$max = 99;
+$maxQuestions = 3;
+$rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+$question = [];
+$answer = [];
+
+for ($i = 0; $i < $maxQuestions; $i++) {
+    $question[$i] = rand($min, $max);
+    $answer[$i] = $question[$i] % 2 ? 'no' : 'yes';
+}
+
+$result = runGame($rules, $question, $answer);
+
+replyToPlayer($playerName, $result);
