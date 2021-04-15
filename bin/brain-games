@@ -3,6 +3,12 @@
 
 namespace Brain\Games;
 
+use function Brain\Games\Even\gameEven;
+use function Brain\Games\Calc\gameCalc;
+use function Brain\Games\Engine\runGame;
+use function Brain\Games\Cli\replyToPlayer;
+use function Brain\Games\Cli\getUserName;
+
 $autoloadPath1 = __DIR__ . "/../vendor/autoload.php";
 $autoloadPath2 = __DIR__ . "/../../../autoload.php";
 if (file_exists($autoloadPath1)) {
@@ -10,3 +16,18 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
+
+$playerName = getUserName();
+// random game selection
+if (rand(0, 1)) {
+    $game = gameCalc(3);
+} else {
+    $game = gameEven(3);
+}
+
+$rules = $game[0];
+$questions = $game[1];
+$answers = $game[2];
+$result = runGame($rules, $questions, $answers);
+
+replyToPlayer($playerName, $result);
