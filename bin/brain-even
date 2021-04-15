@@ -3,6 +3,11 @@
 
 namespace Brain\Games;
 
+use function Brain\Games\Even\gameEven;
+use function Brain\Games\Engine\runGame;
+use function Brain\Games\Cli\replyToPlayer;
+use function Brain\Games\Cli\getUserName;
+
 $autoloadPath1 = __DIR__ . "/../vendor/autoload.php";
 $autoloadPath2 = __DIR__ . "/../../../autoload.php";
 if (file_exists($autoloadPath1)) {
@@ -10,26 +15,14 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-
-use function Brain\Games\Cli\getUserName;
-use function Brain\Games\Engine\runGame;
-use function Brain\Games\Cli\replyToPlayer;
+$gamesNumber = 3;
 
 $playerName = getUserName();
 
-$min = 0;
-$max = 99;
-$maxQuestions = 3;
-$rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-$question = [];
-$answer = [];
-
-for ($i = 0; $i < $maxQuestions; $i++) {
-    $question[$i] = rand($min, $max);
-    $answer[$i] = $question[$i] % 2 ? 'no' : 'yes';
-}
-
-$result = runGame($rules, $question, $answer);
+$game = gameEven($gamesNumber);
+$rules = $game[0];
+$questions = $game[1];
+$answers = $game[2];
+$result = runGame($rules, $questions, $answers);
 
 replyToPlayer($playerName, $result);
