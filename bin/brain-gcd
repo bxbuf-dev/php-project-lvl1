@@ -3,8 +3,6 @@
 
 namespace Brain\Games;
 
-use function Brain\Games\Even\gameEven;
-use function Brain\Games\Calc\gameCalc;
 use function Brain\Games\Gcd\gameGcd;
 use function Brain\Games\Engine\runGame;
 use function Brain\Games\Cli\replyToPlayer;
@@ -20,17 +18,8 @@ if (file_exists($autoloadPath1)) {
 $gamesNumber = 3;
 
 $playerName = getUserName();
-
 // random game selection
-switch (rand(0, 2)) {
-    case 0:
-    $game = gameCalc($gamesNumber);
-    case 1:
-    $game = gameEven($gamesNumber);
-    case 2:
-    $game = gameGcd($gamesNumber);
-}
-
+$game = gameGcd($gamesNumber);
 $rules = $game[0];
 $questions = $game[1];
 $answers = $game[2];
