@@ -6,3 +6,5 @@
 ![Action status](https://github.com/bxbuf-dev/php-project-lvl1/actions/workflows/linter-check.yml/badge.svg)
 ### Brain Even asciinema
 <a href="https://asciinema.org/a/Z0HgADKgW5ZJ8ZPAp6SAaub20" target="_blank"><img src="https://asciinema.org/a/Z0HgADKgW5ZJ8ZPAp6SAaub20.svg" /></a>
+### Brain Calc asciinema
+<a href="https://asciinema.org/a/407455" target="_blank"><img src="https://asciinema.org/a/407455.svg" /></a>
