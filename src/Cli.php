@@ -23,3 +23,15 @@ function replyToPlayer($name, $result)
     }
     return;
 }
+
+function menuGame()
+{
+    line("We have games:");
+    line("1. Even / Odd");
+    line("2. Calculator");
+    line("3. Greatest common defractor");
+    line("4. Progression");
+    $gameNum = prompt("Choose the game");
+
+    return strval($gameNum);
+}
