@@ -3,7 +3,8 @@
 
 namespace Brain\Games;
 
-use function Brain\Games\Cli\getUserName;
+use function cli\line;
+use function cli\prompt;
 
 $autoloadPath1 = __DIR__ . "/../vendor/autoload.php";
 $autoloadPath2 = __DIR__ . "/../../../autoload.php";
@@ -13,4 +14,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-$playerName = getUserName();
+line("Welcome to the Brain Games!");
+$plrName = prompt("May I have your name?", false, ' ');
+line("Hello, %s!", $plrName);
