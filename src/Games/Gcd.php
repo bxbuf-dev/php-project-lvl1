@@ -25,6 +25,11 @@ function gameGcd(int $maxQuestions)
 
 function gcd($num1, $num2)
 {
+    if ($num2 > $num1) {
+        $tmp = $num2;
+        $num2 = $num1;
+        $num1 = $tmp;
+    }
     while ($num2 != 0) {
         $tmp = $num1 % $num2;
         $num1 = $num2;
