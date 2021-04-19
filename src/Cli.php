@@ -31,7 +31,8 @@ function menuGame()
     line("2. Calculator");
     line("3. Greatest common defractor");
     line("4. Progression");
+    line("5. Prime number");
     $gameNum = prompt("Choose the game");
 
-    return strval($gameNum);
+    return $gameNum;
 }

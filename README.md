@@ -12,3 +12,5 @@
 <a href="https://asciinema.org/a/407483" target="_blank"><img src="https://asciinema.org/a/407483.svg" /></a>
 ### Brain Progression asciinema
 <a href="https://asciinema.org/a/407739" target="_blank"><img src="https://asciinema.org/a/407739.svg" /></a>
+### Brain Progression asciinema
+<a href="https://asciinema.org/a/408401" target="_blank"><img src="https://asciinema.org/a/408401.svg" /></a>
