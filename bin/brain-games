@@ -3,15 +3,7 @@
 
 namespace Brain\Games;
 
-use function Brain\Games\Even\gameEven;
-use function Brain\Games\Calc\gameCalc;
-use function Brain\Games\Gcd\gameGcd;
-use function Brain\Games\Progression\gameProgression;
-use function Brain\Games\Prime\gamePrime;
-use function Brain\Games\Engine\runGame;
-use function Brain\Games\Cli\replyToPlayer;
 use function Brain\Games\Cli\getUserName;
-use function Brain\Games\Cli\menuGame;
 
 $autoloadPath1 = __DIR__ . "/../vendor/autoload.php";
 $autoloadPath2 = __DIR__ . "/../../../autoload.php";
@@ -20,32 +12,5 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-$gamesNumber = 3;
 
 $playerName = getUserName();
-// menu game selection
-$playerChoice = menuGame();
-if ($playerChoice > 0 and $playerChoice < 6) {
-    switch ($playerChoice) {
-        case 1:
-        $game = gameCalc($gamesNumber);
-        break;
-        case 2:
-        $game = gameEven($gamesNumber);
-        break;
-        case 3:
-        $game = gameGcd($gamesNumber);
-        break;
-        case 4:
-        $game = gameProgression($gamesNumber);
-        break;
-        case 5:
-        $game = gamePrime($gamesNumber);
-    }
-    $rules = $game[0];
-    $questions = $game[1];
-    $answers = $game[2];
-    $result = runGame($rules, $questions, $answers);
-
-    replyToPlayer($playerName, $result);
-}
