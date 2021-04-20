@@ -16,7 +16,7 @@ function gameGcd(int $maxQuestions)
     for ($i = 0; $i < $maxQuestions; $i++) {
         $num1 = rand(0, 99);
         $num2 = rand(0, 99);
-        $questions[$i] = "{$num1} : {$num2}";
+        $questions[$i] = "{$num1} {$num2}";
         $answers[$i] = strval(gcd($num1, $num2));
     }
     $gameConditions = [$rules, $questions, $answers];
