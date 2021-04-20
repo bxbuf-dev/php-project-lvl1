@@ -21,7 +21,7 @@ namespace Brain\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function runGame(string $rule, $questions, $correctAnswer): bool
+function runGame(string $rule, array $questions, array $correctAnswer): bool
 {
     line($rule);
 
