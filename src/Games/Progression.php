@@ -6,7 +6,7 @@
 
 namespace Brain\Games\Progression;
 
-function gameProgression(int $maxQuestions)
+function gameProgression(int $maxQuestions): array
 {
     $rules = 'What number is missing in the progression?';
 
@@ -29,7 +29,7 @@ function gameProgression(int $maxQuestions)
     return $gameConditions;
 }
 
-function prog_rand()
+function prog_rand(): array
 {
     $progLen = 10; //rand(5, 9);
     $numStart = rand(1, 19);
