@@ -27,6 +27,7 @@ function runGame(string $rule, $questions, $correctAnswer)
 
     for ($i = 0; $i < count($questions); $i++) {
         $plrAnswer = prompt("Question: {$questions[$i]}");
+        line('Your answer: %s', $plrAnswer);
         if ($plrAnswer !== $correctAnswer[$i]) {
             line('"%s" is wrong answer ;(. Correct answer was "%s".', $plrAnswer, $correctAnswer[$i]);
             return false;
