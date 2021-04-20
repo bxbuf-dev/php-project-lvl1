@@ -20,7 +20,7 @@ function gameProgression(int $maxQuestions)
         $answers[$i] = strval($progression[$missedNum]);
         for ($j = 0; $j < $len; $j++) {
             if ($j === $missedNum) {
-                $progression[$j] = '...';
+                $progression[$j] = '..';
             }
         }
         $questions[$i] = implode(' ', $progression);
@@ -32,7 +32,7 @@ function gameProgression(int $maxQuestions)
 function prog_rand()
 {
     $progLen = 10; //rand(5, 9);
-    $numStart = rand(1, 20);
+    $numStart = rand(1, 19);
     $numInc = rand(1, 9);
     $prog = [];
     for ($i = 0; $i < $progLen; $i++) {
