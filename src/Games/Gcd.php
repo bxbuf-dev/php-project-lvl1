@@ -6,7 +6,7 @@
 
 namespace Brain\Games\Gcd;
 
-function gameGcd(int $maxQuestions)
+function gameGcd(int $maxQuestions): array
 {
     $rules = 'Find the greatest common divisor of given numbers.';
 
@@ -23,13 +23,8 @@ function gameGcd(int $maxQuestions)
     return $gameConditions;
 }
 
-function gcd($num1, $num2)
+function gcd(int $num1, int $num2): int
 {
-    if ($num2 > $num1) {
-        $tmp = $num2;
-        $num2 = $num1;
-        $num1 = $tmp;
-    }
     while ($num2 != 0) {
         $tmp = $num1 % $num2;
         $num1 = $num2;
