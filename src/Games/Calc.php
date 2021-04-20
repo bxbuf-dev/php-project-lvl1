@@ -6,7 +6,7 @@
 
 namespace Brain\Games\Calc;
 
-function gameCalc(int $maxQuestions)
+function gameCalc(int $maxQuestions): array
 {
     $rules = 'What is the result of the expression?';
 
