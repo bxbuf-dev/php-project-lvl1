@@ -5,7 +5,7 @@
 //Критерии правильно/нерпавильно
 namespace Brain\Games\Even;
 
-function gameEven(int $maxQuestions)
+function gameEven(int $maxQuestions): array
 {
     $min = 0;
     $max = 99;
@@ -14,7 +14,7 @@ function gameEven(int $maxQuestions)
     $answers = [];
     for ($i = 0; $i < $maxQuestions; $i++) {
         $questions[$i] = rand($min, $max);
-        $answers[$i] = $questions[$i] % 2 ? 'no' : 'yes';
+        $answers[$i] = $questions[$i] % 2 == 1 ? 'no' : 'yes';
     }
     $gameConditions = [$rules, $questions, $answers];
     return $gameConditions;
