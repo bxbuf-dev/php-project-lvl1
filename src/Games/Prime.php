@@ -6,7 +6,7 @@
 
 namespace Brain\Games\Prime;
 
-function gamePrime(int $maxQuestions)
+function gamePrime(int $maxQuestions): array
 {
     $rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -25,7 +25,7 @@ function gamePrime(int $maxQuestions)
     return $gameConditions;
 }
 
-function isPrime($num): bool
+function isPrime(int $num): bool
 {
     for ($i = 2; $i < $num; $i++) {
         if ($num % $i == 0) {
