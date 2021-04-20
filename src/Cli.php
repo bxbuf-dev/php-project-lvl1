@@ -23,16 +23,3 @@ function replyToPlayer(string $name, bool $result): void
     }
     return;
 }
-
-function menuGame(): int
-{
-    line("We have games:");
-    line("1. Even / Odd");
-    line("2. Calculator");
-    line("3. Greatest common defractor");
-    line("4. Progression");
-    line("5. Prime number");
-    $gameNum = prompt("Choose the game");
-
-    return $gameNum;
-}
