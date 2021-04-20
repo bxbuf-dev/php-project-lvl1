@@ -31,7 +31,7 @@ function gameProgression(int $maxQuestions)
 
 function prog_rand()
 {
-    $progLen = rand(5, 10);
+    $progLen = rand(5, 9);
     $numStart = rand(0, 99);
     $numInc = rand(1, 9);
     $prog = [];
