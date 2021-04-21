@@ -14,7 +14,7 @@ function gameProgression(int $maxQuestions): array
     $answers = [];
 
     for ($i = 0; $i < $maxQuestions; $i++) {
-        $progression = prog_rand();
+        $progression = progRand();
         $len = count($progression);
         $missedNum = rand(1, ($len - 2));
         $answers[$i] = strval($progression[$missedNum]);
@@ -29,7 +29,7 @@ function gameProgression(int $maxQuestions): array
     return $gameConditions;
 }
 
-function prog_rand(): array
+function progRand(): array
 {
     $progLen = 10; //rand(5, 9);
     $numStart = rand(1, 19);
