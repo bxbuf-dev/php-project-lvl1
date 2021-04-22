@@ -12,8 +12,9 @@ use function Brain\Games\Progression\gameProgression;
 use function Brain\Games\Cli\replyToPlayer;
 use function Brain\Games\Cli\getUserName;
 
-function playGame(string $gameName, int $gamesNumber)
+function playGame(string $gameName, int $gamesNumber): void
 {
+    $game = [];
     $playerName = getUserName();
     switch ($gameName) {
         case 'Calc':
@@ -32,13 +33,15 @@ function playGame(string $gameName, int $gamesNumber)
             $game = gameProgression($gamesNumber);
             break;
     }
-    $rules = $game[0];
-    $questions = $game[1];
-    $answers = $game[2];
-
-    $result = runGame($rules, $questions, $answers);
-
-    replyToPlayer($playerName, $result);
+    if (empty($game)) {
+        line("Game is not chosen!");
+    } else {
+        $rules = $game[0];
+        $questions = $game[1];
+        $answers = $game[2];
+        $result = runGame($rules, $questions, $answers);
+        replyToPlayer($playerName, $result);
+    }
 }
 
 function runGame(string $rule, array $questions, array $correctAnswer): bool
