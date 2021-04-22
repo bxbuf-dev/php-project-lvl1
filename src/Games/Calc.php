@@ -9,28 +9,32 @@ namespace Brain\Games\Calc;
 function gameCalc(int $maxQuestions): array
 {
     $rules = 'What is the result of the expression?';
-
+    $expressions = "*+-";
+    $expNum = strlen($expressions) - 1;
     $questions = [];
     $answers = [];
 
     for ($i = 0; $i < $maxQuestions; $i++) {
-        $num1 = rand(0, 99);
-        $num2 = rand(0, 9);
-        $curExp = rand(1, 3);
+        $num1 = rand(1, 99);
+        $num2 = rand(1, 9);
+        $curExp = $expressions[rand(0, $expNum)];
         // matn action select
         switch ($curExp) {
             // addition
-            case 1:
+            case '+':
                 $questions[$i] = "{$num1} + {$num2}";
                 $answers[$i] = strval($num1 + $num2);
+                break;
             // substraction
-            case 2:
+            case '-':
                 $questions[$i] = "{$num1} - {$num2}";
                 $answers[$i] = strval($num1 - $num2);
+                break;
             // muliplication
-            case 3:
+            case '*':
                 $questions[$i] = "{$num1} * {$num2}";
                 $answers[$i] = strval($num1 * $num2);
+                break;
         }
     }
     $gameConditions = [$rules, $questions, $answers];
