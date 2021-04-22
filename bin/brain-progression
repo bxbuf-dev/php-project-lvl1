@@ -1,12 +1,9 @@
 #!/usr/bin/env php
 <?php
 
-namespace Brain\Games;
+namespace Brain\Calc;
 
-use function Brain\Games\Progression\gameProgression;
-use function Brain\Games\Engine\runGame;
-use function Brain\Games\Cli\replyToPlayer;
-use function Brain\Games\Cli\getUserName;
+use function Brain\Games\Engine\playGame;
 
 $autoloadPath1 = __DIR__ . "/../vendor/autoload.php";
 $autoloadPath2 = __DIR__ . "/../../../autoload.php";
@@ -15,15 +12,8 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
+
 $gamesNumber = 3;
+$gameName = "Progression";
 
-$playerName = getUserName();
-
-$game = gameProgression($gamesNumber);
-$rules = $game[0];
-$questions = $game[1];
-$answers = $game[2];
-
-$result = runGame($rules, $questions, $answers);
-
-replyToPlayer($playerName, $result);
+playGame($gameName, $gamesNumber);
