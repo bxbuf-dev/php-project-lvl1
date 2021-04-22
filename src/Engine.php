@@ -33,7 +33,7 @@ function playGame(string $gameName, int $gamesNumber): void
             $game = gameProgression($gamesNumber);
             break;
     }
-    if (empty($game)) {
+    if (count($game) === 0) {
         line("Game is not chosen!");
     } else {
         $rules = $game[0];
