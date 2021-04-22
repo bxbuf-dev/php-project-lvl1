@@ -1,9 +1,5 @@
 <?php
 
-//Логика игры Calc
-//Формулировка условия
-//Критерии правильно/нерпавильно
-
 namespace Brain\Games\Calc;
 
 function gameCalc(int $maxQuestions): array

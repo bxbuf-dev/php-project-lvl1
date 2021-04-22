@@ -1,8 +1,5 @@
 <?php
 
-//Логика игры Even
-//Формулировка условия
-//Критерии правильно/нерпавильно
 namespace Brain\Games\Even;
 
 function gameEven(int $maxQuestions): array

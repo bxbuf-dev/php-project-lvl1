@@ -1,9 +1,5 @@
 <?php
 
-//Логика игры НОД
-//Формулировка условия
-//Критерии правильно/нерпавильно
-
 namespace Brain\Games\Progression;
 
 function gameProgression(int $maxQuestions): array

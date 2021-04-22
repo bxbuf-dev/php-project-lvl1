@@ -1,9 +1,5 @@
 <?php
 
-//Логика игры Простое число
-//Формулировка условия
-//Критерии правильно/нерпавильно
-
 namespace Brain\Games\Prime;
 
 function gamePrime(int $maxQuestions): array
