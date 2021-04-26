@@ -19,7 +19,7 @@ function gameEven(): void
     return;
 }
 
-function isEven($num)
+function isEven($num): string
 {
     return $num % 2 == 1 ? 'no' : 'yes';
 }
