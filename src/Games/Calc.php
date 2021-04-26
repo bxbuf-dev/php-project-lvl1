@@ -4,7 +4,7 @@ namespace Brain\Games\Calc;
 
 use function Brain\Games\Engine\runGame;
 
-function gameCalc()
+function gameCalc(): void
 {
     $rules = 'What is the result of the expression?';
     $expressions = ["*", "+", "-"];

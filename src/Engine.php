@@ -7,7 +7,7 @@ use function cli\prompt;
 use function Brain\Games\Cli\replyToPlayer;
 use function Brain\Games\Cli\getUserName;
 
-function runGame(string $rule, array $questions, array $correctAnswer)
+function runGame(string $rule, array $questions, array $correctAnswer): void
 {
     $playerName = getUserName();
     line($rule);

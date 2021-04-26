@@ -4,7 +4,7 @@ namespace Brain\Games\Progression;
 
 use function Brain\Games\Engine\runGame;
 
-function gameProgression()
+function gameProgression(): void
 {
     $rules = 'What number is missing in the progression?';
 

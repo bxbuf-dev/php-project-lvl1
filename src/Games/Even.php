@@ -4,7 +4,7 @@ namespace Brain\Games\Even;
 
 use function Brain\Games\Engine\runGame;
 
-function gameEven()
+function gameEven(): void
 {
     $min = 0;
     $max = 99;
