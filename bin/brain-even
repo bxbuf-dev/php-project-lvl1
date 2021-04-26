@@ -3,7 +3,7 @@
 
 namespace Brain\Games;
 
-use function Brain\Games\Engine\playGame;
+use function Brain\Games\Even\gameEven;
 
 $autoloadPath1 = __DIR__ . "/../vendor/autoload.php";
 $autoloadPath2 = __DIR__ . "/../../../autoload.php";
@@ -13,7 +13,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-$gamesNumber = 3;
-$gameName = "Even";
-
-playGame($gameName, $gamesNumber);
+gameEven();

@@ -2,7 +2,9 @@
 
 namespace Brain\Games\Calc;
 
-function gameCalc(int $maxQuestions): array
+use function Brain\Games\Engine\runGame;
+
+function gameCalc()
 {
     $rules = 'What is the result of the expression?';
     $expressions = ["*", "+", "-"];
@@ -10,11 +12,11 @@ function gameCalc(int $maxQuestions): array
     $questions = [];
     $answers = [];
 
-    for ($i = 0; $i < $maxQuestions; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $num1 = rand(1, 99);
         $num2 = rand(1, 9);
         $curExp = $expressions[rand(0, $expNum)];
-        // matn action select
+        // math action select
         switch ($curExp) {
             // addition
             case '+':
@@ -33,6 +35,6 @@ function gameCalc(int $maxQuestions): array
                 break;
         }
     }
-    $gameConditions = [$rules, $questions, $answers];
-    return $gameConditions;
+    runGame($rules, $questions, $answers);
+    return;
 }

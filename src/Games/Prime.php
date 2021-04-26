@@ -2,14 +2,16 @@
 
 namespace Brain\Games\Prime;
 
-function gamePrime(int $maxQuestions): array
+use function Brain\Games\Engine\runGame;
+
+function gamePrime()
 {
     $rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
     $questions = [];
     $answers = [];
 
-    for ($i = 0; $i < $maxQuestions; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $questions[$i] = rand(1, 100);
         if (isPrime($questions[$i])) {
             $answers[$i] = 'yes';
@@ -17,8 +19,8 @@ function gamePrime(int $maxQuestions): array
             $answers[$i] = 'no';
         }
     }
-    $gameConditions = [$rules, $questions, $answers];
-    return $gameConditions;
+    runGame($rules, $questions, $answers);
+    return;
 }
 
 function isPrime(int $num): bool

@@ -2,14 +2,16 @@
 
 namespace Brain\Games\Progression;
 
-function gameProgression(int $maxQuestions): array
+use function Brain\Games\Engine\runGame;
+
+function gameProgression()
 {
     $rules = 'What number is missing in the progression?';
 
     $questions = [];
     $answers = [];
 
-    for ($i = 0; $i < $maxQuestions; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $progression = progRand();
         $len = count($progression);
         $missedNum = rand(1, ($len - 2));
@@ -21,8 +23,8 @@ function gameProgression(int $maxQuestions): array
         }
         $questions[$i] = implode(' ', $progression);
     }
-    $gameConditions = [$rules, $questions, $answers];
-    return $gameConditions;
+    runGame($rules, $questions, $answers);
+    return;
 }
 
 function progRand(): array

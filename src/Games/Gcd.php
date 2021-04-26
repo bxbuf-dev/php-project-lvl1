@@ -2,21 +2,23 @@
 
 namespace Brain\Games\Gcd;
 
-function gameGcd(int $maxQuestions): array
+use function Brain\Games\Engine\runGame;
+
+function gameGcd()
 {
     $rules = 'Find the greatest common divisor of given numbers.';
 
     $questions = [];
     $answers = [];
 
-    for ($i = 0; $i < $maxQuestions; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $num1 = rand(0, 99);
         $num2 = rand(0, 99);
         $questions[$i] = "{$num1} {$num2}";
         $answers[$i] = strval(gcd($num1, $num2));
     }
-    $gameConditions = [$rules, $questions, $answers];
-    return $gameConditions;
+    runGame($rules, $questions, $answers);
+    return;
 }
 
 function gcd(int $num1, int $num2): int
