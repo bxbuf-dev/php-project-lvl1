@@ -5,8 +5,8 @@ namespace Brain\Games\Calc;
 function gameCalc(int $maxQuestions): array
 {
     $rules = 'What is the result of the expression?';
-    $expressions = "*+-";
-    $expNum = strlen($expressions) - 1;
+    $expressions = ["*", "+", "-"];
+    $expNum = count($expressions) - 1;
     $questions = [];
     $answers = [];
 
