@@ -11,8 +11,13 @@ function gameEven(int $maxQuestions): array
     $answers = [];
     for ($i = 0; $i < $maxQuestions; $i++) {
         $questions[$i] = rand($min, $max);
-        $answers[$i] = $questions[$i] % 2 == 1 ? 'no' : 'yes';
+        $answers[$i] = isEven($questions[$i]);
     }
     $gameConditions = [$rules, $questions, $answers];
     return $gameConditions;
+}
+
+function isEven($num)
+{
+    return $num % 2 == 1 ? 'no' : 'yes';
 }
