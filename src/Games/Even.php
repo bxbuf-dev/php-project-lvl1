@@ -8,14 +8,13 @@ function gameEven(): void
 {
     $min = 0;
     $max = 99;
-    $rules = 'Answer "yes" if the number is even, otherwise answer "no".';
     $questions = [];
     $answers = [];
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < TOTAL_ROUNDS; $i++) {
         $questions[$i] = rand($min, $max);
         $answers[$i] = isEven($questions[$i]);
     }
-    runGame($rules, $questions, $answers);
+    runGame(EVEN_RULE, $questions, $answers);
     return;
 }
 

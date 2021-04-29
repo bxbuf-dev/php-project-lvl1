@@ -6,30 +6,24 @@ use function Brain\Games\Engine\runGame;
 
 function gameProgression(): void
 {
-    $rules = 'What number is missing in the progression?';
-
     $questions = [];
     $answers = [];
 
-    for ($i = 0; $i < 3; $i++) {
-        $progression = progRand();
-        $len = count($progression);
-        $missedNum = rand(1, ($len - 2));
+    for ($i = 0; $i < TOTAL_ROUNDS; $i++) {
+        $progression = getRandProgression();
+        $progLen = count($progression);
+        $missedNum = rand(1, ($progLen - 2));
         $answers[$i] = strval($progression[$missedNum]);
-        for ($j = 0; $j < $len; $j++) {
-            if ($j === $missedNum) {
-                $progression[$j] = '..';
-            }
-        }
+        $progression[$missedNum] = '..';
         $questions[$i] = implode(' ', $progression);
     }
-    runGame($rules, $questions, $answers);
+    runGame(PROG_RULE, $questions, $answers);
     return;
 }
 
-function progRand(): array
+function getRandProgression(): array
 {
-    $progLen = 10; //rand(5, 9);
+    $progLen = 10;
     $numStart = rand(1, 19);
     $numInc = rand(1, 9);
     $prog = [];

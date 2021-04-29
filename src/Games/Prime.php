@@ -6,20 +6,14 @@ use function Brain\Games\Engine\runGame;
 
 function gamePrime(): void
 {
-    $rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
     $questions = [];
     $answers = [];
 
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < TOTAL_ROUNDS; $i++) {
         $questions[$i] = rand(1, 100);
-        if (isPrime($questions[$i])) {
-            $answers[$i] = 'yes';
-        } else {
-            $answers[$i] = 'no';
-        }
+        $answers[$i] = isPrime($questions[$i]) ? 'yes' : 'no';
     }
-    runGame($rules, $questions, $answers);
+    runGame(PRIME_RULE, $questions, $answers);
     return;
 }
 

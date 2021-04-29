@@ -6,18 +6,16 @@ use function Brain\Games\Engine\runGame;
 
 function gameGcd(): void
 {
-    $rules = 'Find the greatest common divisor of given numbers.';
-
     $questions = [];
     $answers = [];
 
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < TOTAL_ROUNDS; $i++) {
         $num1 = rand(0, 99);
         $num2 = rand(0, 99);
         $questions[$i] = "{$num1} {$num2}";
         $answers[$i] = strval(gcd($num1, $num2));
     }
-    runGame($rules, $questions, $answers);
+    runGame(GCD_RULE, $questions, $answers);
     return;
 }
 

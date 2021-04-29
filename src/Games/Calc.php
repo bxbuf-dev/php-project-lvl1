@@ -6,13 +6,12 @@ use function Brain\Games\Engine\runGame;
 
 function gameCalc(): void
 {
-    $rules = 'What is the result of the expression?';
     $expressions = ["*", "+", "-"];
     $expNum = count($expressions) - 1;
     $questions = [];
     $answers = [];
 
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < TOTAL_ROUNDS; $i++) {
         $num1 = rand(1, 99);
         $num2 = rand(1, 9);
         $curExp = $expressions[rand(0, $expNum)];
@@ -35,6 +34,6 @@ function gameCalc(): void
                 break;
         }
     }
-    runGame($rules, $questions, $answers);
+    runGame(CALC_RULE, $questions, $answers);
     return;
 }

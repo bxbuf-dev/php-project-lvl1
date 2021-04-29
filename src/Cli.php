@@ -13,13 +13,3 @@ function getUserName(): string
 
     return $plrName;
 }
-
-function replyToPlayer(string $name, bool $result): void
-{
-    if ($result) {
-        line("Congratulations, {$name}!");
-    } else {
-        line("Let's try again, {$name}!");
-    }
-    return;
-}
