@@ -13,15 +13,15 @@ define('GCD_RULE', 'Find the greatest common divisor of given numbers.');
 define('PRIME_RULE', 'Answer "yes" if given number is prime. Otherwise answer "no".');
 define('PROG_RULE', 'What number is missing in the progression?');
 
-function runGame(string $rule, array $questions, array $correctAnswer): void
+function runGame(string $rule, array $gameQandA): void
 {
     $playerName = getUserName();
     line($rule);
-    for ($i = 0; $i < count($questions); $i++) {
-        $plrAnswer = prompt("Question: {$questions[$i]}");
+    for ($i = 0; $i < count($gameQandA); $i++) {
+        $plrAnswer = prompt("Question: {$gameQandA[$i]['question']}");
         line('Your answer: %s', $plrAnswer);
-        if ($plrAnswer !== $correctAnswer[$i]) {
-            line('"%s" is wrong answer ;(. Correct answer was "%s".', $plrAnswer, $correctAnswer[$i]);
+        if ($plrAnswer !== $gameQandA[$i]['answer']) {
+            line('"%s" is wrong answer ;(. Correct answer was "%s".', $plrAnswer, $gameQandA[$i]['answer']);
             line("Let's try again, {$playerName}!");
             return;
         }

@@ -6,18 +6,17 @@ use function Brain\Games\Engine\runGame;
 
 function gameProgression(): void
 {
-    $questions = [];
-    $answers = [];
+    $qAndA = [];
 
     for ($i = 0; $i < TOTAL_ROUNDS; $i++) {
         $progression = getRandProgression();
         $progLen = count($progression);
         $missedNum = rand(1, ($progLen - 2));
-        $answers[$i] = strval($progression[$missedNum]);
+        $qAndA[$i]['answer'] = strval($progression[$missedNum]);
         $progression[$missedNum] = '..';
-        $questions[$i] = implode(' ', $progression);
+        $qAndA[$i]['question'] = implode(' ', $progression);
     }
-    runGame(PROG_RULE, $questions, $answers);
+    runGame(PROG_RULE, $qAndA);
     return;
 }
 

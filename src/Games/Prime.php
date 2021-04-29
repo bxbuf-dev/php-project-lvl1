@@ -6,14 +6,13 @@ use function Brain\Games\Engine\runGame;
 
 function gamePrime(): void
 {
-    $questions = [];
-    $answers = [];
+    $qAndA = [];
 
     for ($i = 0; $i < TOTAL_ROUNDS; $i++) {
-        $questions[$i] = rand(1, 100);
-        $answers[$i] = isPrime($questions[$i]) ? 'yes' : 'no';
+        $qAndA[$i]['question'] = rand(1, 100);
+        $qAndA[$i]['answer'] = isPrime($qAndA[$i]['question']) ? 'yes' : 'no';
     }
-    runGame(PRIME_RULE, $questions, $answers);
+    runGame(PRIME_RULE, $qAndA);
     return;
 }
 

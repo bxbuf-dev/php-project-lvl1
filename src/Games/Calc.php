@@ -8,8 +8,7 @@ function gameCalc(): void
 {
     $expressions = ["*", "+", "-"];
     $expNum = count($expressions) - 1;
-    $questions = [];
-    $answers = [];
+    $qAndA = [];
 
     for ($i = 0; $i < TOTAL_ROUNDS; $i++) {
         $num1 = rand(1, 99);
@@ -19,21 +18,21 @@ function gameCalc(): void
         switch ($curExp) {
             // addition
             case '+':
-                $questions[$i] = "{$num1} + {$num2}";
-                $answers[$i] = strval($num1 + $num2);
+                $qAndA[$i]['question'] = "{$num1} + {$num2}";
+                $qAndA[$i]['answer'] = strval($num1 + $num2);
                 break;
             // substraction
             case '-':
-                $questions[$i] = "{$num1} - {$num2}";
-                $answers[$i] = strval($num1 - $num2);
+                $qAndA[$i]['question'] = "{$num1} - {$num2}";
+                $qAndA[$i]['answer'] = strval($num1 - $num2);
                 break;
             // muliplication
             case '*':
-                $questions[$i] = "{$num1} * {$num2}";
-                $answers[$i] = strval($num1 * $num2);
+                $qAndA[$i]['question'] = "{$num1} * {$num2}";
+                $qAndA[$i]['answer'] = strval($num1 * $num2);
                 break;
         }
     }
-    runGame(CALC_RULE, $questions, $answers);
+    runGame(CALC_RULE, $qAndA);
     return;
 }

@@ -8,13 +8,13 @@ function gameEven(): void
 {
     $min = 0;
     $max = 99;
-    $questions = [];
-    $answers = [];
+    $qAndA = [];
+
     for ($i = 0; $i < TOTAL_ROUNDS; $i++) {
-        $questions[$i] = rand($min, $max);
-        $answers[$i] = isEven($questions[$i]);
+        $qAndA[$i]['question'] = rand($min, $max);
+        $qAndA[$i]['answer'] = isEven($qAndA[$i]['question']);
     }
-    runGame(EVEN_RULE, $questions, $answers);
+    runGame(EVEN_RULE, $qAndA);
     return;
 }
 
