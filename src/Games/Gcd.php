@@ -12,13 +12,13 @@ function gameGcd(): void
         $num1 = rand(0, 99);
         $num2 = rand(0, 99);
         $qAndA[$i]['question'] = "{$num1} {$num2}";
-        $qAndA[$i]['answer'] = strval(gcd($num1, $num2));
+        $qAndA[$i]['answer'] = strval(getGcd($num1, $num2));
     }
     runGame(GCD_RULE, $qAndA);
     return;
 }
 
-function gcd(int $num1, int $num2): int
+function getGcd(int $num1, int $num2): int
 {
     while ($num2 != 0) {
         $tmp = $num1 % $num2;

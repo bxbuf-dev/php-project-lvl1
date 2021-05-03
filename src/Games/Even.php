@@ -12,13 +12,13 @@ function gameEven(): void
 
     for ($i = 0; $i < TOTAL_ROUNDS; $i++) {
         $qAndA[$i]['question'] = rand($min, $max);
-        $qAndA[$i]['answer'] = isEven($qAndA[$i]['question']);
+        $qAndA[$i]['answer'] = isEven($qAndA[$i]['question']) ? "yes" : "no";
     }
     runGame(EVEN_RULE, $qAndA);
     return;
 }
 
-function isEven(int $num): string
+function isEven(int $num): bool
 {
-    return $num % 2 == 1 ? 'no' : 'yes';
+    return $num % 2 == 1 ? false : true;
 }
