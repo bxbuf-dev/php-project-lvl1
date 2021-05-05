@@ -4,7 +4,10 @@ namespace Brain\Games\Progression;
 
 use function Brain\Games\Engine\runGame;
 
-function gameProgression(): void
+const TOTAL_ROUNDS = 3;
+const PROG_RULE = 'What number is missing in the progression?';
+
+function playProgression(): void
 {
     $qAndA = [];
 

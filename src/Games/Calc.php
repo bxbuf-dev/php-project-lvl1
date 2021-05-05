@@ -4,7 +4,10 @@ namespace Brain\Games\Calc;
 
 use function Brain\Games\Engine\runGame;
 
-function gameCalc(): void
+const TOTAL_ROUNDS = 3;
+const CALC_RULE = 'What is the result of the expression?';
+
+function playCalc(): void
 {
     $expressions = ["*", "+", "-"];
     $expNum = count($expressions) - 1;

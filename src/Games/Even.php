@@ -4,7 +4,10 @@ namespace Brain\Games\Even;
 
 use function Brain\Games\Engine\runGame;
 
-function gameEven(): void
+const TOTAL_ROUNDS = 3;
+const EVEN_RULE = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+function playEven(): void
 {
     $min = 0;
     $max = 99;

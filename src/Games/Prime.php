@@ -4,7 +4,10 @@ namespace Brain\Games\Prime;
 
 use function Brain\Games\Engine\runGame;
 
-function gamePrime(): void
+const TOTAL_ROUNDS = 3;
+const PRIME_RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+function playPrime(): void
 {
     $qAndA = [];
 

@@ -4,7 +4,10 @@ namespace Brain\Games\Gcd;
 
 use function Brain\Games\Engine\runGame;
 
-function gameGcd(): void
+const TOTAL_ROUNDS = 3;
+const GCD_RULE = 'Find the greatest common divisor of given numbers.';
+
+function playGcd(): void
 {
     $qAndA = [];
 
